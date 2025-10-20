@@ -44,3 +44,8 @@ li {
   padding: 8px 10px;
   border-bottom: 1px solid #eee;
 }
+
+li.compled span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

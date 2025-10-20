@@ -31,3 +31,20 @@ taskForm.addEventListener('submit', function (e) {
   taskInput.value = '';
   taskInput.focus();
 });
+
+// Delegação de eventos no <ul>
+taskList.addEventListener('click', function(e) {
+  const li = e.target.closest('li');
+  if (!li) return;
+
+  // remover tarefa 
+  if (e.target.classlist.contains('delete-btn')) {
+    li.remove();
+    return;
+  }
+
+  // marcar como concluída 
+  if(e.target.tagName === 'SPAN') {
+    li.classlist.toggle('completed');
+  }
+});
